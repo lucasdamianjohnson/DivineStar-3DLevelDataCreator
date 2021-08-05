@@ -1,0 +1,28 @@
+<div id="nodeFlowRightMenu"   [@openClose]="menuRightOpen ? 'open' : 'closed'" >
+
+
+  
+  <div class='menuright-expandclose'>
+    <button class="menu-expand-button" (click)='toggleMenuRight()'>
+        <span *ngIf='menuRightOpen'>&#11166;</span>
+        <span *ngIf='!menuRightOpen'>&#11164;</span>
+    </button>
+</div>
+
+<div  *ngFor="let data of dataSets" >
+
+
+    <app-node-flow-data-set-button 
+    [activeOption]='activeOption'
+    [option]='data.name'
+    (click)='(setActiveOption(data.name))'>
+    >
+  </app-node-flow-data-set-button>  
+
+
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,99 @@
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.activeNodeOption == 'node-asset-library',
+    'dead' : ds.flowMenuManager.activeNodeOption != 'node-asset-library'
+}">
+<div class="mainmenubuttons button-row">
+    <app-main-menu-button *ngFor="let option of this.ds.flowMenuManager.getMenu( 'node-asset-library' ).getOptions()"
+      [activeOption]='this.ds.flowMenuManager.getMenu( "node-asset-library" ).activeOption'
+      [option]='option'
+      (click)='this.ds.flowMenuManager.getMenu( "node-asset-library" ).setActiveOption(option)'>
+    </app-main-menu-button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption == 'Add Asset',
+  'dead' :  ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption != 'Add Asset'
+}">
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.assetLibrary.currentAssetView == 'meta',
+  'dead' : ds.flowMenuManager.assetLibrary.currentAssetView != 'meta'
+}">
+<h1 class="module-title">Add Asset</h1>
+<app-node-type-grid [hideScrool]='true' [dataSet]='assetOptions'></app-node-type-grid>
+</div>
+
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.assetLibrary.currentAssetView == 'Models',
+  'dead' : ds.flowMenuManager.assetLibrary.currentAssetView != 'Models'
+}">
+<h1 class="module-title">Models</h1>
+<app-menu-button  (click)='ds.flowMenuManager.assetLibrary.setCurrentView("Add New Model");' [option]="'Add New Model'"></app-menu-button>
+<app-menu-button  (click)='ds.flowMenuManager.assetLibrary.setCurrentView("meta");' [option]="'Back'"></app-menu-button>
+
+<app-node-type-grid  [dataSet]='ds.assetsManager.getDisplayData("Models")'></app-node-type-grid>
+
+
+</div>
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.assetLibrary.currentAssetView == 'Add New Model',
+  'dead' : ds.flowMenuManager.assetLibrary.currentAssetView != 'Add New Model'
+}">
+<h1 class="module-title">Add New Model</h1>
+<app-menu-button  (click)='ds.flowMenuManager.assetLibrary.setCurrentView("Models");' [option]="'Back'"></app-menu-button>
+<app-add-asset-form></app-add-asset-form>
+
+</div>
+
+
+
+</div>
+
+
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption == 'Add Node',
+  'dead' :  ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption != 'Add Node'
+}">
+  <h1 class="module-title">Add Node</h1>
+
+<!--   <div *ngFor="let data of ds.flowMenuManager.getMenu( 'node-asset-library' ).nodesToAdd">
+    <h1>test</h1>
+  <app-node-to-add [data]='data'>
+  </app-node-to-add>  
+</div> -->
+
+<div *ngFor="let data of ds.flowMenuManager.assetLibrary.nodesToAdd">
+
+  <app-node-to-add  [data]='data'></app-node-to-add>
+
+</div>
+
+
+
+</div>
+
+
+<div  [ngClass]="{
+  'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption == 'Edit',
+  'dead' :  ds.flowMenuManager.getMenu( 'node-asset-library' ).activeOption != 'Edit'
+}">
+<app-edit-asset-node></app-edit-asset-node>
+ 
+
+</div>
+
+</div>

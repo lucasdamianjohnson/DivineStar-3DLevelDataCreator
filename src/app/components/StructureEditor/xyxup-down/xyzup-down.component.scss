@@ -1,0 +1,69 @@
+.xyz-ud .xyz-ud-button {
+    font-size: 15px;
+
+    border: 1px solid var(--primary);
+    background-color: rgb(0,0,0,0);
+    color: white;
+    font-weight: 800;
+    min-width: 50px;;
+}
+.xyz-ud  .xyz-ud-button:hover {
+    background-color: var(--hover);;
+    color: white;
+    font-weight: 1000;
+
+}
+.xyz-ud  .xyz-ud-title {
+    color: white;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+.xyz-ud-small .xyz-ud-button {
+    font-size: 10px;
+   height: 25px;
+    border: 1px solid var(--primary);
+    background-color: rgb(0,0,0,0);
+    color: white;
+    font-weight: 800;
+    min-width: 40px;;
+}
+.xyz-ud-small  .xyz-ud-button:hover {
+    background-color: var(--hover);
+    color: white;
+    font-weight: 1000;
+
+}
+.xyz-ud-small  .xyz-ud-title {
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    margin: none;
+}
+
+
+
+
+
+
+
+
+.xyz-ud {
+    color: white;
+    width: 100%;
+}
+.xyz-ud-border {
+   
+    border: 1px solid var(--primary);
+    padding: 0px;
+    margin: none;
+}
+
+.xyz-ud-item {
+    margin-left: 20px;
+}
+
+.xyz-ud-small-title-container {
+    float: left;
+}

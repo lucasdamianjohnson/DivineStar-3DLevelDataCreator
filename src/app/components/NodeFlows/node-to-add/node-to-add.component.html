@@ -1,0 +1,24 @@
+<div #nodeToAdd  draggable="true" class="node-to-add"  >
+
+
+
+  <div (click)="toggleExpand()" 
+  [ngClass]="{ 'node-to-add-title':true, 'epxnaded':expanded }"   [style.backgroundColor]="titleBGColor"  [style.color]="titleColor">
+  <span
+   class='node-to-add-title-link' href="#">{{data.name}}   {{data.shortdesc}}</span>
+  <span class='node-to-add-expand-arrow' *ngIf='expanded'>&#x25B3;</span>
+  <span class='node-to-add-expand-arrow' *ngIf='!expanded'>&#x25BD;</span>
+  <div>
+  
+  </div>
+  
+  </div>
+
+  <div  [ngClass]="{ 'node-to-add-data':true, 'epxnaded':expanded }">
+    {{data.desc}}
+
+    </div>
+
+
+
+  </div>

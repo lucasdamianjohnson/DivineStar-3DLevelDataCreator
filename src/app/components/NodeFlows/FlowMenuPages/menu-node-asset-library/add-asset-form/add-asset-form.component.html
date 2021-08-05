@@ -1,0 +1,123 @@
+<div class="object-update-form-container">
+  <form [formGroup]="assetForm"
+    class="object-update-form"
+    (ngSubmit)="addAsset()">
+
+    <div class="object-update-form-grid">
+
+      <div class="object-update-option-group">
+        <div class="object-update-form-grouptitile">Asset Details</div>
+        <div class="object-update-form-group">
+          <label class="label-text" for="model-id">ID:</label>
+          <input class="input-text" id="model-id"
+            type="text"
+            formControlName="id" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label class="label-text" for="model-name">Name:</label>
+          <input class="input-text" id="model-name"
+            type="text"
+            formControlName="name" />
+        </div>
+      </div>
+
+      <div class="object-update-option-group">
+        <div class="object-update-form-grouptitile">Asset Rendering</div>
+
+        <div class="object-update-form-group">
+          <label class="label-checkbox" for="has-alpha">Has Alpha:</label>
+          <input iclass="input-checkbox" d="has-alpha"
+            type="checkbox"
+            formControlName="has-alpha" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label class="label-checkbox" for="nearest-sampiling-mode">Nearest Sampiling Mode:</label>
+          <input class="input-checkbox" id="nearest-sampiling-mode"
+            type="checkbox"
+            formControlName="nearest-sampiling-mode" />
+        </div>
+
+      </div>
+
+
+
+      <div class="object-update-option-group full">
+        <div class="object-update-form-grouptitile">Asset Path</div>
+        <app-menu-button (click)='$event.preventDefault(); locateFile();'
+          [option]="'Locate File'"></app-menu-button>
+        <div class="object-update-form-group">
+          <label class="label-text"  for="file-path">File Path:</label>
+          <input class="input-text" id="file-path"
+            type="text"
+            formControlName="file-path" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label class="label-text" for="file-name">File Name:</label>
+          <input class="input-text" id="file-name"
+            type="text"
+            formControlName="file-name" />
+        </div>
+
+
+
+
+
+
+      </div>
+
+      <div class="object-update-option-group full">
+        <div class="object-update-form-grouptitile">Export Data</div>
+
+
+
+        <div class="object-update-form-group">
+          <label class="label-checkbox" for="file-path">External Asset (excludes it from the data export):</label>
+          <input class="input-checkbox" id="file-path"
+            type="checkbox"
+            formControlName="external-asset" />
+        </div>
+        <p>Set the path and the filename as they should appear in the data export.</p>
+        <div class="object-update-form-group">
+          <label class="label-text"  for="file-path">Export Path:</label>
+          <input class="input-text" id="file-path"
+            type="text"
+            formControlName="export-path" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label class="label-text" for="file-name">Export File Name:</label>
+          <input class="input-text" id="file-name"
+            type="text"
+            formControlName="export-file-name" />
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="object-update-form-bottom-buttons">
+      <div class="button-row">
+
+        <app-menu-button [option]="'Add Asset'"  ></app-menu-button>
+      </div>
+    </div>
+
+  </form>
+
+
+
+</div>

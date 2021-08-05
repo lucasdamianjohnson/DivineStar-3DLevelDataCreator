@@ -1,0 +1,107 @@
+<div class="object-update-form-container">
+  <form [formGroup]="objectForm"
+    class="object-update-form"
+    (ngSubmit)="update()">
+
+    <div class="object-update-form-grid">
+
+      <div *ngIf="options.position"
+        class="object-update-option-group">
+        <div class="object-update-form-grouptitile">Position</div>
+
+
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-position-x">X:</label>
+          <input id="{{baseId}}-position-x"
+            type="number"
+            formControlName="positionX" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-position-y">Y:</label>
+          <input id="{{baseId}}-position-y"
+            type="number"
+            formControlName="positionY" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-position-y">Z:</label>
+          <input id="{{baseId}}-position-y"
+            type="number"
+            formControlName="positionZ" />
+        </div>
+
+
+      </div>
+
+      <div *ngIf="options.rotation"
+        class="object-update-option-group">
+        <div class="object-update-form-grouptitile">Rotation</div>
+
+
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-rotation-x">X:</label>
+          <input id="{{baseId}}-rotation-x"
+            type="number"
+            formControlName="rotationX" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-rotation-y">Y:</label>
+          <input id="{{baseId}}-rotation-y"
+            type="number"
+            formControlName="rotationY" />
+        </div>
+
+        <div class="object-update-form-group">
+          <label for="{{baseId}}-rotation-y">Z:</label>
+          <input id="{{baseId}}-rotation-y"
+            type="number"
+            formControlName="rotationZ" />
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <div *ngFor="let otherdata of data.otherdata"
+        class="object-update-option-group">
+        <div class="object-update-form-grouptitile">{{otherdata.title}}</div>
+        <div *ngFor="let member of otherdata.members"
+          class="object-update-form-group">
+          <label for="{{baseId}}-{{member.name}}">{{member.name}}:</label>
+          <input id="{{baseId}}-{{member.name}}"
+            type="{{member.type}}"
+            formControlName="{{member.name}}"
+            value="{{member.value}}" />
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="object-update-form-bottom-buttons">
+      <div class="button-row">
+
+        <app-menu-button [option]="'Update'"></app-menu-button>
+      </div>
+    </div>
+    
+  </form>
+</div>

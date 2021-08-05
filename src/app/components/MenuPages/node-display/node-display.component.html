@@ -1,0 +1,86 @@
+<div>
+
+  <div class="mainmenubuttons button-row">
+
+    <app-main-menu-button *ngFor="let option of ds.nodeDisplayMenuManager.optionList"
+      [activeOption]='ds.nodeDisplayMenuManager.activeOption'
+      [option]='option'
+      (click)='( ds.nodeDisplayMenuManager.activeOption = option )'>
+    </app-main-menu-button>
+
+
+  </div>
+
+  <div id="options">
+
+    <!--Meta Nodes-->
+    <div [ngClass]="{
+                'objectdisplaylist' : true,
+                'alive' : ds.nodeDisplayMenuManager.activeOption == 'Models',
+                'dead' : ds.nodeDisplayMenuManager.activeOption != 'Models'
+            }">
+
+      <div *ngFor="let item of ds.nodeManager.getNodeDataKeys('Models') ">
+
+        <app-node-info-bar [data]='ds.nodeManager.getNodeData(
+                "Models",
+                item
+               )'></app-node-info-bar>
+
+      </div>
+
+    </div>
+    <!--objects-->
+    <div [ngClass]="{
+            'objectdisplaylist' : true,
+            'alive' : ds.nodeDisplayMenuManager.activeOption == 'Objects',
+            'dead' : ds.nodeDisplayMenuManager.activeOption != 'Objects'
+        }">
+
+      <div *ngFor="let item of ds.nodeManager.getNodeDataKeys('Objects') ">
+
+        <app-node-info-bar [data]='ds.nodeManager.getNodeData(
+            "Objects",
+            item
+           )'></app-node-info-bar>
+
+      </div>
+
+    </div>
+    <!--Physics-->
+    <div [ngClass]="{
+        'objectdisplaylist' : true,
+        'alive' : ds.nodeDisplayMenuManager.activeOption == 'Physics',
+        'dead' : ds.nodeDisplayMenuManager.activeOption != 'Physics'
+    }">
+
+      <div *ngFor="let item of ds.nodeManager.getNodeDataKeys('Physics') ">
+
+        <app-node-info-bar [data]='ds.nodeManager.getNodeData(
+        "Physics",
+        item
+       )'></app-node-info-bar>
+
+      </div>
+
+    </div>
+    <!---->
+    <div [ngClass]="{
+        'objectdisplaylist' : true,
+        'alive' : ds.nodeDisplayMenuManager.activeOption == 'Lights',
+        'dead' : ds.nodeDisplayMenuManager.activeOption != 'Lights'
+    }">
+
+      <div *ngFor="let item of ds.nodeManager.getNodeDataKeys('Lights') ">
+
+        <app-node-info-bar [data]='ds.nodeManager.getNodeData(
+        "Lights",
+        item
+       )'></app-node-info-bar>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

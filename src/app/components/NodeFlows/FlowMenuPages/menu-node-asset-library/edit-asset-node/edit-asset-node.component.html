@@ -1,0 +1,30 @@
+<h1 class="module-title">Edit</h1>
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType == '',
+    'dead' :   ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType != ''
+  }">
+  <h3 class="module-subtitle">No node selected.</h3>
+
+</div>
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType == 'model',
+    'dead' :   ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType != 'model'
+  }">
+  <h3 class="module-subtitle">Model</h3>
+
+</div>
+
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType == 'object',
+    'dead' :   ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType != 'object'
+  }">
+  <h3 class="module-subtitle">Object</h3>
+
+</div>
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType == 'physics',
+    'dead' :   ds.flowMenuManager.getMenu( 'node-asset-library' ).selectedNodeType != 'physics'
+  }">
+  <h3 class="module-subtitle">Physics</h3>
+
+</div>

@@ -1,0 +1,40 @@
+#nodeFlowRightMenu {
+    margin-top: 25px;
+    position: absolute;
+     z-index: var(--nodeFlowMenuZIndex );
+
+    background-color: var(--menuBackGround);
+    width: 10%;
+    left: 90%;
+    height: calc(100% - 26px);
+
+
+
+
+    .menuright-expandclose {
+        position: absolute;
+        left: -40px;
+        top: 0;
+    }
+    
+    .menu-expand-button:hover { 
+        background-color: var(--infobg3);
+        cursor: pointer;
+    }
+   .menu-expand-button {
+       
+       
+       background-color: rgb(0,0,0,.5);
+       height: 39px;
+       color: white;
+       width: 40px;
+   }
+   .menuright-expandclose .menu-expand-button {
+    border-top: 3px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
+    border-left: 3px solid var(--primary);
+    border-right: none;
+}
+
+
+}

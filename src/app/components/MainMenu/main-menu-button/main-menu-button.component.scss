@@ -1,0 +1,24 @@
+.main-menu-button {
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid var(--primary);
+    background-color: rgb(0,0,0,0);
+    color: white;
+    font-weight: 800;
+}
+.main-menu-button.inactive:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+.main-menu-button.active {
+  background-color:  var(--primary);
+  color: white;
+}
+.main-menu-button.active:hover {
+  background-color:   var(--primary);
+  cursor: default;
+}
+.main-menu-button.inactive {
+  background-color: rgb(0,0,0,0);
+}

@@ -1,0 +1,44 @@
+<div 
+[ngClass]="{
+    'node-types-to-add' : true,
+    'node-types-scroll' : !hideScrool
+}"
+>
+
+<div class='node-types-to-add-griditem' *ngFor="let data of dataSet">
+
+    <div class='node-toadd-title'>{{data.name}}</div>
+    
+<!--     <div class="node-toadd-datadisplay">
+        <div>Type : {{model.type}}</div>
+    <div>ID : {{model.id}}</div>
+    <div *ngFor="let otherOptions of model.otherOptions">
+      
+        <div>{{otherOptions.name}} : {{otherOptions.value}}</div>
+        
+    </div>
+
+    </div> -->
+    <div class="node-types-grid-description" *ngIf="data.description">
+            <p>{{data.description}}  </p>
+
+        </div>
+
+
+    <div class="node-types-to-add-options">
+
+        <div *ngFor="let option of data.options">
+        <app-menu-button  (click)='option.func()' [option]='option.name'></app-menu-button>
+    </div>
+
+<!--     <app-menu-button  (click)='quickAdd(model.id)' [option]='addOptions.quick'></app-menu-button>
+    <app-menu-button (click)='addAndSet(model.id)' [option]='addOptions.detailed'></app-menu-button> -->
+
+
+
+
+</div>
+
+</div>
+
+</div>

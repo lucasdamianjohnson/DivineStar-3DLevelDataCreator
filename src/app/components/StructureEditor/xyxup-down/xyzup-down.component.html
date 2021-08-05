@@ -1,0 +1,35 @@
+
+<div [ngClass]="{
+    'xyz-ud' : !small,
+    'xyz-ud-small' : small
+}">
+<div *ngIf='!small' class="xyz-ud-title">{{title}}</div>
+<div class="xyz-ud-border">
+    <div  *ngIf='small' class="xyz-ud-small-title-container">
+        <span class="xyz-ud-title">{{title}}</span>
+        </div>
+<div class="flex-row">
+ 
+ 
+    <div class="xyz-ud-item">
+        <span>X</span>&nbsp;
+        <button (click)="onClick('right', 1)" class="xyz-ud-button">+</button>
+        <button  (click)="onClick('left', 1)"  class="xyz-ud-button">-</button>
+        
+    </div>
+    <div class="xyz-ud-item">
+        <span>Y</span>&nbsp;
+        <button  (click)="onClick('up', 1)"  class="xyz-ud-button">+</button>
+        <button  (click)="onClick('down', 1)"  class="xyz-ud-button">-</button>
+        
+    </div>
+    <div class="xyz-ud-item">
+        <span>Z</span>&nbsp;
+        <button  (click)="onClick('forward', 1)"  class="xyz-ud-button">+</button>
+        <button  (click)="onClick('back', 1)"  class="xyz-ud-button">-</button>  
+    </div>
+
+</div>
+</div>
+
+</div>

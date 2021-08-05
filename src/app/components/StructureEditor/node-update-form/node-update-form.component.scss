@@ -1,0 +1,69 @@
+.object-update-form-container {
+
+    border: 1px solid var(--primary);
+    background-color: var(--infobg);
+    margin-top: 20px;
+    padding: 15px;
+    min-height: 250px;
+    
+    position: relative;
+
+}
+
+.object-update-form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+}
+
+
+.object-update-form {
+   text-align: center;
+}
+
+.object-update-form-grouptitile {
+    color: white;
+    border-bottom: 1px solid var(--primary);
+    background-color: var(--infobg);
+    width: 100%;
+    margin-bottom: 10px;
+}
+.object-update-option-group {
+    margin: 10px;
+    border: 1px solid var(--primary);
+    background-color: var(--infobg2);
+    opacity: .5;
+    transition: opacity .2s ;
+    text-align: center;
+    min-height: 75px;
+    padding-bottom: 5px;
+
+}
+.object-update-option-group:hover {
+    opacity: 1;
+    transition: opacity .2s ; 
+}
+
+
+.object-update-form-bottom-buttons {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid var(--primary);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.object-update-form-group {
+    margin-top: 5px;
+}
+
+.object-update-form label {
+    color: white;
+}
+
+.object-update-form input[type='number'] {
+    width: 50px;
+}

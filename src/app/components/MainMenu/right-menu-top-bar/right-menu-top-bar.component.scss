@@ -1,0 +1,29 @@
+.right-menu-topbar-icon-container {
+    min-width: 30px;
+    min-height: 35px;
+    background-color: var(--primary);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.right-menu-topbar-icon-container.active .right-menu-topbar-icon  {
+    fill: var(--hover);
+}
+
+.right-menu-topbar-icon-container .right-menu-topbar-icon {
+
+    fill: white;
+}
+
+.right-menu-topbar-icon-container .right-menu-topbar-icon:hover {
+
+    fill: var(--hover);
+}
+.right-menu-topbar-buttons{
+    border-top: 3px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
+    border-left: 10px solid var(--primary);
+    width: 100%;
+    height: 33px;
+    background-color: var(--primary);
+}

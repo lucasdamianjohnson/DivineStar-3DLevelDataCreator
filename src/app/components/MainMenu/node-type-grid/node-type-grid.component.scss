@@ -1,0 +1,45 @@
+.node-types-to-add {
+    display: grid;
+    grid-template-columns: auto auto;
+ 
+    max-height: 901px;
+    color: white;   
+}
+.node-types-scroll {
+    overflow-y: scroll;
+}
+.node-toadd-title {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: var(--primary);
+}
+.node-types-grid-description {
+    padding : 20px;
+}
+.node-types-to-add-griditem {
+    border: 1px solid var(--primary);
+    background-color:  var(--infobg);
+    width: auto;
+    height: 150px;
+    opacity: .5;
+    transition: .2s opacity;
+    margin: none;
+}
+.node-types-to-add-griditem:focus-within,.node-types-to-add-griditem:hover,.node-types-to-add-griditem:focus {
+    opacity: 1;
+    transition: .2s opacity;
+}
+.node-types-to-add-options {
+    float: bottom;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.node-toadd-datadisplay {
+    padding: 10px;
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto ;
+}

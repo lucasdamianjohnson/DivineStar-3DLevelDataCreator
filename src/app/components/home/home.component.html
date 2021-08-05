@@ -1,0 +1,117 @@
+<section role="main" class="{{currentTheme}}"(selectstart)="void()">
+  <app-top-menu-bar></app-top-menu-bar>
+
+    <app-node-flow-main></app-node-flow-main>
+
+
+    <div id="main" class="dead" (mouseup)="mouseUp()" [style.cursor]="currentCursor" >
+
+    <div>
+    
+      <!-- menu left-->
+    
+      <div   id="mainMenuLeft"
+        [@openClose]="menuLeftOpen ? 'open' : 'closed'"  [style.width]="menuLeftWidth + '%'" >
+
+
+        <app-node-display></app-node-display>
+<!--     
+  <div  >
+    
+        <div class="mainmenubuttons button-row">
+
+            <app-main-menu-button *ngFor="let option of options"
+            [activeOption]='activeOption'
+            [option]='option.name'
+            (click)='(setActiveOption(option.name))'>
+          </app-main-menu-button>  
+
+    
+        </div>
+    
+        <div  id="options">
+    
+          <div *ngIf="activeOption == 'Models' ">
+
+       <app-models></app-models> 
+
+          </div>
+    
+        </div>
+    
+    </div> 
+  -->
+    
+    
+        <div class="menuleft-resizebar" (mousedown)="mouseDown()"   (mouseup)="mouseUp()"></div>
+    
+        <div class='menuleft-expandclose'>
+            <button class="menu-expand-button" (click)='toggleMenuLeft()'>
+                <span *ngIf='!menuLeftOpen'>&#11166;</span>
+                <span *ngIf='menuLeftOpen'>&#11164;</span>
+            </button>
+        </div>
+    
+      </div>
+    
+    
+    
+      <!-- menu right-->
+      <div id="mainMenuRight"  [@openCloseRightMenu]="menuRightOpen ? 'open' : 'closed'">
+        <div  >
+    
+           <app-right-menu-top-bar></app-right-menu-top-bar>
+    
+    
+        <div  [ngClass]="{
+          'alive' : ds.rightMenuManager.activeOption == 'AddNode',
+          'dead' : ds.rightMenuManager.activeOption != 'AddNode'
+      }">
+          <app-add-node></app-add-node>
+        </div>
+    
+        <div  [ngClass]="{
+          'alive' : ds.rightMenuManager.activeOption == 'AssetLibrary',
+          'dead' : ds.rightMenuManager.activeOption != 'AssetLibrary'
+      }">
+         <app-asset-library></app-asset-library>
+        </div>
+
+          <div  [ngClass]="{
+            'alive' : ds.rightMenuManager.activeOption == 'EditNode',
+            'dead' : ds.rightMenuManager.activeOption != 'EditNode'
+        }">
+            <app-edit-node></app-edit-node>
+        </div>
+    
+    
+          <div  [ngClass]="{
+            'alive' : ds.rightMenuManager.activeOption == 'CrossHairs',
+            'dead' : ds.rightMenuManager.activeOption != 'CrossHairs'
+        }">
+          <!-- <app-cross-hairs-ui></app-cross-hairs-ui> -->
+
+        </div>
+    
+        
+    
+       </div> 
+        <div class='menuright-expandclose'>
+          <button class="menu-expand-button" (click)='toggleMenuRight()'>
+              <span *ngIf='menuRightOpen'>&#11166;</span>
+              <span *ngIf='!menuRightOpen'>&#11164;</span>
+          </button>
+      </div>
+    
+    
+      </div>
+    
+    
+    </div>
+    
+    <app-engine></app-engine>
+    
+    </div>
+    
+    </section>
+    

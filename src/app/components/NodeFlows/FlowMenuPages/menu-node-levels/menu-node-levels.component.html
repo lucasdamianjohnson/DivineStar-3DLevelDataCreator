@@ -1,0 +1,14 @@
+<div [ngClass]="{
+    'alive' : ds.flowMenuManager.activeNodeOption == 'node-levels',
+    'dead' : ds.flowMenuManager.activeNodeOption != 'node-levels'
+}">
+<div class="mainmenubuttons button-row">
+<app-main-menu-button *ngFor="let option of this.ds.flowMenuManager.getMenu( 'node-levels' ).getOptions()"
+[activeOption]='this.ds.flowMenuManager.getMenu( "node-levels" ).activeOption'
+[option]='option'
+(click)='this.ds.flowMenuManager.getMenu( "node-levels" ).setActiveOption(option)'>
+</app-main-menu-button>
+</div>
+<h1 class="module-title">Levels</h1>
+
+</div>

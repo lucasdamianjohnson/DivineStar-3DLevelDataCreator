@@ -1,0 +1,37 @@
+<h1 class="module-title">Asset Library</h1>
+
+
+<div  [ngClass]="{
+    'alive' : currentAssetView == 'meta',
+    'dead' : currentAssetView != 'meta'
+}">
+<h3 class="module-subtitle">Asset Categories</h3>
+<app-node-type-grid [hideScrool]='true' [dataSet]='assetOptions'></app-node-type-grid>
+
+
+</div>
+
+
+<div  [ngClass]="{
+    'alive' : currentAssetView == 'Models',
+    'dead' : currentAssetView != 'Models'
+}">
+<h3 class="module-subtitle">Models</h3>
+<app-menu-button  (click)='addNewModel()' [option]="'Add New Model'"></app-menu-button>
+<app-menu-button  (click)='setView("meta")' [option]="'Back'"></app-menu-button>
+
+<app-node-type-grid  [dataSet]='ds.assetsManager.getDisplayData("Models")'></app-node-type-grid>
+
+
+</div>
+
+<div  [ngClass]="{
+    'alive' : currentAssetView == 'Add New Model',
+    'dead' : currentAssetView != 'Add New Model'
+}">
+<h3 class="module-subtitle">Add New Model</h3>
+<app-menu-button  (click)='setView("Models")' [option]="'Back'"></app-menu-button>
+<!-- <app-node-update-form  [type]="ds.nodeDisplayMenuManager.activeNodeType" [NodeId]="ds.nodeDisplayMenuManager.activeNodeId"></app-node-update-form>
+ -->
+
+</div>

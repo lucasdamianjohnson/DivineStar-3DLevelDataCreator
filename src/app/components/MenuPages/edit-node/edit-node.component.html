@@ -1,0 +1,10 @@
+<h1 class="module-title">Edit Node</h1>
+ <h3>{{ds.nodeDisplayMenuManager.activeNodeId}}</h3>
+<div *ngIf="ds.nodeDisplayMenuManager.activeNodeId != '' ">
+<app-xyzup-down [title]='dataType[1]' [type]='dataType[0]' [nodeId]='ds.nodeDisplayMenuManager.activeNodeId'></app-xyzup-down>
+
+<app-xyzup-down [title]='dataType[2]' [type]='dataType[0]' [nodeId]='ds.nodeDisplayMenuManager.activeNodeId'></app-xyzup-down>
+
+<app-node-update-form  [type]="ds.nodeDisplayMenuManager.activeNodeType" [NodeId]="ds.nodeDisplayMenuManager.activeNodeId"></app-node-update-form>
+
+</div> 

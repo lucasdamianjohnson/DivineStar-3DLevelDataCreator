@@ -1,0 +1,15 @@
+<button   [ngClass]="{
+    'node-flow-dataset-button' : true,
+    'active' : option === activeOption,
+    'inactive' : option !== activeOption
+}" >
+
+
+<div>
+{{option}}
+</div>
+<div class="curly-brackets-large">
+    <pre>{{"{}"}}</pre>
+</div>
+
+</button>

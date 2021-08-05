@@ -1,0 +1,57 @@
+#mainToolBar {
+    height: 25px;
+    width: 100%;
+    background-color: rgb(0,0,0,.5);
+    position: absolute;
+   z-index: 1000000000000000000000000000000000000000000000;
+    display: inline-flex;
+}
+
+.topbar-icon-open-folder  {
+    fill: var(--openproject);
+}
+.topbar-icon-open-folder:hover  {
+    fill: var(--openprojecthover);
+}
+.topbar-icon-save {
+    fill: var(--saveproject);
+}
+.topbar-icon-save:hover {
+    fill: var(--saveprojecthover);
+}
+.topbar-icon-settings {
+    fill: var(--editrosettings);
+}
+.topbar-icon-settings:hover {
+    fill: var(--editrosettingshover);
+}
+
+.icon-container {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    
+}
+.icon-container:hover{
+    cursor: pointer;
+}
+
+.top-menu-bar-project-title {
+  
+    
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-menu-bar-version-title {
+
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 88%;
+    transform: translate(-10%, -50%);
+    width: 500px;
+}

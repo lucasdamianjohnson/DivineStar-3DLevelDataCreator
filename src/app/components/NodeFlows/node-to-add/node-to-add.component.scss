@@ -1,0 +1,51 @@
+.node-to-add {
+
+    width: 100%;
+
+    cursor: move;
+    user-select: none;
+    
+        background-color: rgb(0,0,0,.5);
+        color: white;
+    
+    
+    .node-to-add-title {
+    
+    
+        width: 100%;
+        height: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid var(--primary);
+    
+        background-color: var(--primary);
+        width: auto;
+        opacity: .5;
+        transition: .2s opacity;
+    }
+
+    .node-to-add-title.epxnaded {
+        opacity: 1;
+     
+    }
+    .node-to-add-title:hover {
+        opacity: 1;
+        transition: .2s opacity;
+    }
+    
+    
+    
+    .node-to-add-data {
+        display: none;
+        position: relative;
+    }
+    
+    .node-to-add-data.epxnaded {
+        min-height: 50px;
+        display: block;
+    }
+    
+    .node-to-add-expand-arrow {
+        float: right;
+    }
+
+}

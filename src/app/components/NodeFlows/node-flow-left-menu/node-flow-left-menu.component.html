@@ -1,0 +1,41 @@
+<div [@openClose]="menuLeftOpen ? 'open' : 'closed'"
+  id="nodeFlowLeftMenu"
+  [style.cursor]="currentCursor"
+  [style.width]="menuLeftWidth + '%'">
+
+
+  <app-menu-node-asset-library [currentAssetView]="ds.flowMenuManager.assetLibrary.currentAssetView"></app-menu-node-asset-library>
+  <app-menu-node-levels></app-menu-node-levels>
+  <app-menu-node-structures></app-menu-node-structures>
+  <app-menu-node-templates></app-menu-node-templates>
+
+<!--   <div class="mainmenubuttons button-row">
+    <app-main-menu-button *ngFor="let option of     this.ds.flowMenuManager.getMenu( this.ds.flowMenuManager.activeNodeOption ).getOptions()"
+      [activeOption]='activeOption'
+      [option]='option'
+      (click)='setActiveOption(option)'>
+    </app-main-menu-button>
+  </div>
+
+
+  <h1 class="module-title">Node Stuff</h1>
+
+  <app-add-asset-form></app-add-asset-form> -->
+
+
+
+
+
+
+  <div class="menuleft-resizebar"
+    (mousedown)="mouseDown()"
+    (mouseup)="mouseUp()"></div>
+
+  <div class='menuleft-expandclose'>
+    <button class="menu-expand-button"
+      (click)='toggleMenuLeft()'>
+      <span *ngIf='!menuLeftOpen'>&#11166;</span>
+      <span *ngIf='menuLeftOpen'>&#11164;</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class='objectdisplay-item' >
+
+    <div (click)="toggleExpand()" 
+    [ngClass]="{ 'objectdisplay-item-title':true, 'epxnaded':expanded }"   [style.backgroundColor]="titleBGColor"  [style.color]="titleColor">
+    <span
+     class='objectdisplay-item-title-link' href="#">{{data.id}}</span>
+    <span class='objectdisplay-item-expand-arrow' *ngIf='expanded'>&#x25B3;</span>
+    <span class='objectdisplay-item-expand-arrow' *ngIf='!expanded'>&#x25BD;</span>
+    
+    </div>
+    
+    <div  [ngClass]="{ 'objectdisplay-item-data':true, 'epxnaded':expanded }">
+    <div   class="grid-container"  >
+    
+     
+    <div class="">
+        <div class="objectdisplay-data-title">Position</div>
+        <div class="flex-row">
+        <p>X: {{data.position.x}}</p>
+        <p>Y: {{data.position.y}}</p>
+        <p>Z: {{data.position.z}}</p>
+    </div>
+    </div>
+    
+    <div class="">
+        <div class="objectdisplay-data-title">Rotation</div>
+        <div class="flex-row">
+        <p>X: {{data.rotation.x}}</p>
+        <p>Y: {{data.rotation.y}}</p>
+        <p>Z: {{data.rotation.z}}</p>
+    </div>
+    </div>
+    
+    <div *ngIf="data?.uvs" class="">
+        <div class="objectdisplay-data-title">UVS</div>
+        <div class="flex-row">
+        <p>X: {{data?.uvs?.x}}</p>
+        <p>Y: {{data?.uvs?.y}}</p>
+        <p>Z: {{data?.uvs?.z}}</p>
+        <p>W: {{data?.uvs?.w}}</p>
+    </div>
+    
+    </div>
+    
+    </div>
+ 
+    <app-xyzup-down [small]='true' [title]="'Position'" [nodeId]='data.id' [type]="'model'"></app-xyzup-down>
+    <app-xyzup-down [small]='true' [title]="'Rotation'"  [nodeId]='data.id' [type]="'model'"></app-xyzup-down>
+    
+    <div class="objectdisplay-item-bottom-buttons">
+        <app-menu-button   *ngFor="let modelOption of modelOptions" [option]='modelOption.name' (click)="modelOption.func(data.id,self)" >
+        </app-menu-button>
+        
+    </div>
+    </div>
+    
+    
+    </div>
+    
+    
+    

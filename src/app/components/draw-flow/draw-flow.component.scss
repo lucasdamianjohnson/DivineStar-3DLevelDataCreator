@@ -1,0 +1,21 @@
+.draw-flow-wrapper {
+    // display: block;
+     position: absolute;
+     z-index: 150;
+    width: 100%;
+    height: 100%;
+    cursor: move;
+    // background-color: black;
+}
+
+.draw-flow-wrapper.active {
+    display: block;
+}
+.draw-flow-wrapper {
+    display: none;
+}
+
+.drawflow, .drawflow .parent-node {
+    position: absolute !important;
+    z-index: 150;
+}
